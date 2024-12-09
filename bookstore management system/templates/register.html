@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Register | Daily Dose of Reading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #83d6ff, #eaa720);
+            color: #333;
+        }
+        .navbar {
+            background: transparent;
+            box-shadow: none;
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .register-form {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background: #222;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #f9a825;
+        }
+        .btn-custom {
+            background: #284855;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 30px;
+            transition: background 0.3s;
+        }
+        .btn-custom:hover {
+            background: #f9a825;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/"><img src="static/images/websitelogo.png" alt="Logo"></a>
+        <div class="ml-auto">
+            <a href="/login" class="btn btn-custom">Login</a>
+        </div>
+    </nav>
+
+    <!-- Register Form -->
+    <div class="container">
+        <div class="register-form">
+            <h4 class="text-center mb-4">Register Form</h4>
+            <form action="{{ url_for('registerRoute') }}" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" class="form-control" name="fname" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" class="form-control" name="lname" placeholder="Enter your last name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" class="form-control" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-control" name="password" placeholder="Enter your password" required minlength="8">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="state">State</label>
+                        <input type="text" id="state" class="form-control" name="state" placeholder="Enter your state" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="pincode">Pincode</label>
+                        <input type="number" id="pincode" class="form-control" name="pincode" placeholder="Enter your pincode" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" class="form-control" name="address" rows="2" placeholder="Enter your address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" class="form-control" name="country" placeholder="Enter your country" required>
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">Create Your Account</button>
+            </form>
+
+            {% if response == 1 %}
+            <div class="alert alert-success mt-3">
+                Registration successful!
+            </div>
+            {% endif %}
+
+            {% if response == 0 %}
+            <div class="alert alert-danger mt-3">
+                Registration failed. Please check your details.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Daily Dose of Reading. All rights reserved.</p>
+        <p>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

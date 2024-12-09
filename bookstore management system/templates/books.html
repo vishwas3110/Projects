@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Daily Dose of Reading - Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #83d6ff, #eaa720);
+            color: #333;
+        }
+        .navbar {
+            background: transparent;
+            box-shadow: none;
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .navbar-nav .nav-link {
+            color: 007bff !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+        .container {
+            padding: 30px 15px;
+        }
+        .form-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background: #f9a825;
+            border: none;
+        }
+        .btn-primary:hover {
+            background: #eaa720;
+        }
+        .footer {
+            background: #222;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #f9a825;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="./adminindex"><img src="static/images/websitelogo.png" alt="Logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="./adminindex" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="./search" class="nav-link">Search Books</a></li>
+            <li class="nav-item"><a href="./books" class="nav-link">Manage Books</a></li>
+            <li class="nav-item"><a href="./inventory" class="nav-link">Inventory</a></li>
+            <li class="nav-item"><a href="./users" class="nav-link">Manage Users</a></li>
+            <li class="nav-item"><a href="./myorders" class="nav-link">Orders</a></li>
+            <li class="nav-item"><a href="./logout" class="nav-link">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+    <!-- Add Book Section -->
+    <div class="container form-section">
+        <h4 class="text-center">Add Book</h4>
+        <form action="{{url_for('addBookRoute')}}" method="POST">
+            <div class="form-group">
+                <label for="bookID">Book ISBN</label>
+                <input type="number" id="bookID" name="bookID" class="form-control" placeholder="Enter book ISBN" required>
+            </div>
+            <div class="form-group">
+                <label for="title">Book Title</label>
+                <input type="text" id="title" name="title" class="form-control" placeholder="Enter book title" required>
+            </div>
+            <div class="form-group">
+                <label for="genre">Genre</label>
+                <input type="text" id="genre" name="genre" class="form-control" placeholder="Enter book genre" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" class="form-control" placeholder="Enter book price" required>
+            </div>
+            <div class="form-group">
+                <label for="fname">Author First Name</label>
+                <input type="text" id="fname" name="fname" class="form-control" placeholder="Enter author first name" required>
+            </div>
+            <div class="form-group">
+                <label for="lname">Author Last Name</label>
+                <input type="text" id="lname" name="lname" class="form-control" placeholder="Enter author last name" required>
+            </div>
+            <div class="form-group">
+                <label for="year">Publication Year</label>
+                <input type="number" id="year" name="year" class="form-control" placeholder="Enter publication year" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Publication Country</label>
+                <input type="text" id="country" name="country" class="form-control" placeholder="Enter publication country" required>
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock</label>
+                <input type="number" id="stock" name="stock" class="form-control" placeholder="Enter stock count" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Add Book</button>
+        </form>
+    </div>
+
+    <!-- Update Book Section -->
+    <div class="container form-section">
+        <h4 class="text-center">Update Book Price</h4>
+        <form action="{{url_for('updateBookRoute')}}" method="POST">
+            <div class="form-group">
+                <label for="bookID">Book ISBN</label>
+                <input type="number" id="bookID" name="bookID" class="form-control" placeholder="Enter book ISBN" required>
+            </div>
+            <div class="form-group">
+                <label for="price1">Current Price</label>
+                <input type="number" id="price1" name="price1" class="form-control" placeholder="Enter current price" required>
+            </div>
+            <div class="form-group">
+                <label for="stock">value</label>
+                <input type="number" id="stock" name="quantity" class="form-control" placeholder="Enter quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="price2">New Price</label>
+                <input type="number" id="price2" name="price2" class="form-control" placeholder="Enter new price" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Update Price</button>
+        </form>
+    </div>
+
+    <!-- Delete Book Section -->
+    <div class="container form-section">
+        <h4 class="text-center">Delete Book</h4>
+        <form action="{{url_for('deleteBookRoute')}}" method="POST">
+            <div class="form-group">
+                <label for="bookID">Book ISBN</label>
+                <input type="number" id="bookID" name="bookID" class="form-control" placeholder="Enter book ISBN" required>
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Delete Book</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Daily Dose of Reading. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
