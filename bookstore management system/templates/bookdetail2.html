@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Book Details - Daily Dose of Reading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #d9f4ff, #f9e79f);
+            color: #333;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        #top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .user-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .user-menu li {
+            display: inline;
+        }
+        .user-menu a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .user-menu a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            flex-grow: 1;
+        }
+        .main-content h4 {
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: center;
+        }
+        address h5, address strong {
+            font-size: 1rem;
+            color: #333;
+        }
+        .btn-custom {
+            background: #2c3e50;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 30px;
+            transition: background 0.3s;
+        }
+        .btn-custom:hover {
+            background: #e67e22;
+        }
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div id="top-bar" class="container-fluid">
+        <a class="navbar-brand" href="./adminindex"><img src="static/images/websitelogo.png" alt="Daily Dose of Reading"></a>
+        <ul class="user-menu">
+            <li><a href="./adminindex">Go Back</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div id="wrapper" class="container">
+        <section class="main-content">
+            <h4 class="title"><span class="text"><strong>Book</strong> Details</span></h4>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <address>
+                        <h5><strong>Title:</strong> <span>{{ bookData[1] }}</span></h5>
+                        <p><strong>Book ISBN:</strong> <span>{{ bookData[0] }}</span></p>
+                        <p><strong>Genre:</strong> <span>{{ bookData[2] }}</span></p>
+                        <p><strong>Author Name:</strong> <span>{{ bookData[5] }} {{ bookData[6] }}</span></p>
+                        <p><strong>Publication Year:</strong> <span>{{ bookData[4] }}</span></p>
+                        <p><strong>Publication Country:</strong> <span>{{ bookData[7] }}</span></p>
+                    </address>
+                    <h4><strong>Price: Rs {{ bookData[3] }} /-</strong></h4>
+                </div>
+            </div>
+        </section>     
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Daily Dose of Reading. All rights reserved.</p>
+    </footer>
+</body>
+</html>

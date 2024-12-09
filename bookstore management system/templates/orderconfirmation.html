@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Order Confirmation - Daily Dose of Reading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #83d6ff, #eaa720);
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            background: transparent;
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .main-content {
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .main-content h4 {
+            font-weight: 600;
+            color: #284855;
+        }
+        .main-content p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto; /* Ensures footer sticks to bottom */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="./customerindex"><img src="static/images/websitelogo.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="./customerindex" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="./customersearch" class="nav-link">Search Books</a></li>
+                <li class="nav-item"><a href="./myorders" class="nav-link">My Orders</a></li>
+                <li class="nav-item"><a href="./myaccount" class="nav-link">My Account</a></li>
+                <li class="nav-item"><a href="./logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Order Confirmation Content -->
+    <div class="container">
+        <div class="main-content">
+            <h4 class="title"><span class="text"><strong>Order</strong> Confirmation</span></h4>
+            {% if response == "1" %}
+                <p>Your order has been placed <strong>successfully</strong>!</p>
+            {% endif %}
+            {% if response == "0" %}
+                <p>Your order has <strong>failed</strong>. Please try again.</p>
+            {% endif %}
+            <a href="./customerindex" class="btn btn-custom mt-3">Go Back</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Daily Dose of Reading. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

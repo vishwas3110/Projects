@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Daily Dose of Reading - Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #83d6ff, #eaa720);
+            color: #333;
+        }
+        .navbar {
+            background: transparent;
+            box-shadow: none;
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .header-text {
+            text-align: center;
+            margin: 20px 0;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+            transition: transform 0.2s;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-title {
+            font-size: 1.25rem;
+        }
+        .btn-custom {
+            background: #284855;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 30px;
+            transition: background 0.3s;
+        }
+        .btn-custom:hover {
+            background: #f9a825;
+        }
+        .footer {
+            background: #222;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: #f9a825;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="adminindex"><img src="static/images/websitelogo.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a href="./adminindex" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="./search" class="nav-link">Search Books</a></li>
+                <li class="nav-item"><a href="./books" class="nav-link">Manage Books</a></li>
+                <li class="nav-item"><a href="./inventory" class="nav-link">Inventory</a></li>
+                <li class="nav-item"><a href="./users" class="nav-link">Manage Users</a></li>
+                <li class="nav-item"><a href="./myorders" class="nav-link">Orders</a></li>
+                <li class="nav-item"><a href="./logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mt-4">
+        <div class="header-text">
+            “A room without books is like a body without a soul.” <br> - Marcus Tullius Cicero
+        </div>
+    </div>
+
+    <!-- Admin Actions Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4" style="color: #fff;">Admin Dashboard</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h5 class="card-title">Manage Books</h5>
+                    <p class="card-text">Add, update, or delete books in the library.</p>
+                    <a href="./books" class="btn btn-custom">Manage Books</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h5 class="card-title">Manage Inventory</h5>
+                    <p class="card-text">Track and update book stock.</p>
+                    <a href="./inventory" class="btn btn-custom">Inventory</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h5 class="card-title">Manage Users</h5>
+                    <p class="card-text">View and manage admin and customer accounts.</p>
+                    <a href="./users" class="btn btn-custom">Users</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h5 class="card-title">Orders</h5>
+                    <p class="card-text">View and manage customer orders.</p>
+                    <a href="./myorders" class="btn btn-custom">Orders</a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <h5 class="card-title">Search Books</h5>
+                    <p class="card-text">Search for books in the library database.</p>
+                    <a href="./search" class="btn btn-custom">Search Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
